@@ -1,0 +1,167 @@
+:root {
+  /* Colors */
+
+  /* Primary */
+  --Green500: hsl(158, 36%, 37%);
+  --Green700: hsl(158, 42%, 18%);
+
+  /* Neutral */
+  --Black: hsl(212, 21%, 14%);
+  --Grey: hsl(228, 12%, 48%);
+  --Cream: hsl(30, 38%, 92%);
+  --White: hsl(0, 0%, 100%);
+
+  /* Typography */
+  --FontBodySize: 14px;
+
+  /* Font Weights */
+  --weights5: 500;
+  --weights7: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--Cream);
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Main Product Card Componenet */
+.product-card {
+  max-width: 43rem;
+  display: flex;
+  outline: invert;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: var(--White);
+}
+
+/* Left (Image) Section */
+.product-image {
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  background-image: url(./design/images/image-product-desktop.jpg);
+}
+
+/* Right (Text) Section */
+.product-text {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  row-gap: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.hero {
+  font-size: 1rem;
+  color: var(--Grey);
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-size: 2.35rem;
+  color: var(--Black);
+  line-height: 2.35rem;
+  font-weight: var(--weights7);
+  font-family: "Fraunces", serif;
+}
+
+.paragraph {
+  color: var(--Grey);
+  line-height: 1.5rem;
+  font-weight: var(--weights5);
+}
+
+/* Amount Section */
+.amount-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.newPrice {
+  font-size: 2.5rem;
+  color: var(--Green500);
+  font-weight: var(--weights7);
+  font-family: "Fraunces", serif;
+}
+
+.oldPrice {
+  color: var(--Grey);
+  font-weight: var(--weights5);
+  text-decoration: line-through;
+}
+
+/* Button Section */
+.btn {
+  width: 100%;
+  display: flex;
+  column-gap: 0.85rem;
+  justify-content: center;
+  color: var(--White);
+  padding: 1.1rem 0;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: var(--weights7);
+  background-color: var(--Green500);
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--Green700);
+}
+
+/* Mobile - Phone view */
+@media (max-width: 480px) {
+  body {
+    height: 100vh;
+    padding: 1rem;
+  }
+
+  /* Main Product Card Section */
+  .product-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Image Section */
+  .product-image {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(./design/images/image-product-mobile.jpg);
+  }
+
+  /* Text Section */
+  .product-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .paragraph {
+    font-size: 1.1rem;
+    line-height: 1.85rem;
+  }
+}
